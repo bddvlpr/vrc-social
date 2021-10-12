@@ -6,7 +6,7 @@ class NavigationBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar bg='dark' variant='dark' sticky='top'>
+        <Navbar bg='dark' variant='dark' sticky='top' className='mb-2'>
           <Container>
             <Navbar.Brand as={Link} to='/'>
               <img

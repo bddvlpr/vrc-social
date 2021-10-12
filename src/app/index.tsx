@@ -1,8 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 import { NavigationBar } from './components/navigation/NavigationBar';
+import { NotFoundPage } from './pages/system/NotFoundPage';
+import { HomePage } from './pages/HomePage';
 
 class App extends React.Component {
   render() {
@@ -21,7 +23,10 @@ class App extends React.Component {
           </Helmet>
 
           <NavigationBar />
-          <Switch>{/* Handle routing */}</Switch>
+          <Switch>
+            <Route path='/' component={HomePage} exact />
+            <Route component={NotFoundPage} />
+          </Switch>
         </BrowserRouter>
       </>
     );
