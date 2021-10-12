@@ -13,7 +13,7 @@
     "@types/react": "^17.0.28",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.1",
-    "eslint": "^8.0.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.1",
     "eslint-plugin-prettier": "^4.0.0",
