@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+
+import { NavigationBar } from './components/navigation/NavigationBar';
 
 class App extends React.Component {
   render() {
@@ -18,6 +20,7 @@ class App extends React.Component {
             />
           </Helmet>
 
+          <NavigationBar />
           <Switch>{/* Handle routing */}</Switch>
         </BrowserRouter>
       </>
