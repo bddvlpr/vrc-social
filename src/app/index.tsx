@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet-async';
 import { NavigationBar } from './components/navigation/NavigationBar';
 import { NotFoundPage } from './pages/system/NotFoundPage';
 import { HomePage } from './pages/HomePage';
+import { LoginPage } from './pages/LoginPage';
+import { LogoutPage } from './pages/LogoutPage';
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
         <NavigationBar />
         <Switch>
           <Route path='/' component={HomePage} exact />
+          <Route path='/login' component={LoginPage} />
+          <Route path='/logout' component={LogoutPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </BrowserRouter>

@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/rootReducer';
 
 interface AuthState {
   accessToken?: string;
-  userId?: string;
 }
 
 const initialState: AuthState = {
-  accessToken: undefined,
-  userId: undefined
+  accessToken: undefined
 };
 
 const authSlice = createSlice({
@@ -19,10 +19,11 @@ const authSlice = createSlice({
     },
     logOut: (state: AuthState) => {
       state.accessToken = undefined;
-      state.userId = undefined;
     }
   }
 });
 
+export const useAuthSlice = () =>
+  useSelector((state: RootState) => state.authSlice);
 export const { logIn, logOut } = authSlice.actions;
 export default authSlice.reducer;

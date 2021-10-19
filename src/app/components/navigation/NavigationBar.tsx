@@ -1,12 +1,11 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { RootState } from '../../store/rootReducer';
+import { useAuthSlice } from '../../features/auth/authSlice';
 import { NavigationLink } from './NavigationLink';
 
 const NavigationBar = () => {
-  const authSelector = useSelector((state: RootState) => state.authSlice);
+  const authSlice = useAuthSlice();
   return (
     <>
       <Navbar bg='dark' variant='dark' sticky='top' className='mb-2'>
@@ -24,7 +23,7 @@ const NavigationBar = () => {
           <Navbar.Toggle />
           <Navbar.Collapse className='justify-content-end'>
             <Nav>
-              {authSelector.accessToken ? (
+              {authSlice.accessToken ? (
                 <NavigationLink text='Logout' to='/logout' />
               ) : (
                 <NavigationLink text='Login' to='/login' />
